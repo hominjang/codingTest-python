@@ -1,21 +1,15 @@
-num = input()
-num = int(num)
-ctrl = list(map(str, input().split(" ")))
+n = input()
+n = int(n)
+count = 0
 
-x = 1
-y = 1
+for i in range (n+1):
+    for j in range (60):
+        for k in range (60):
+            #if (str(i).find("3") == 1 ) or (str(j).find("3") == 1) or (str(k).find("3") == 1):
+            # 틀린 조건
+            if '3' in (str(i)+str(j)+str(k)):
+                count = count+1
+print(count)
 
-for a in range(0, num+1):
-    if ctrl[a] == "R" and y < 6:
-        y = y + 1
 
-    elif ctrl[a] == "D" and x < 6:
-        x = x + 1
 
-    elif ctrl[a] == "L" and y > 1:
-        y = y - 1
-
-    elif ctrl[a] == "U" and x > 1:
-        x = x - 1
-
-print(str(x) + " " + str(y))
