@@ -13,7 +13,7 @@ print(a)
 a.append(7)
 print(a)
 
-a.popleft()  # 가장 나중에 들어갔던게 가장 먼저 나온다.
+a.popleft()
 print(a)
 a.append(1)
 print(a)
