@@ -8,4 +8,5 @@ for _ in range (k):
         stack.pop()
     else :
         stack.append(input1)
+        s
 print(sum(stack))
