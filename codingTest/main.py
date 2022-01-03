@@ -1,29 +1,27 @@
-from collections import deque
+a = int(input())
+b = int(input())
+list1 = [[] for _ in range(a+1)]
+visited = [False] * (a + 1)
+count = 0
+
+for i in range(b):
+    x, y = (map(int, input().split(" ")))
+    list1[x].append(y)
+    list1[y].append(x)
+
+print (list1)
+
+def bfs(node):
+    global count
+    visited[node] = True
+    for i in list1[node]:
+        if not visited[i]:
+            count = count + 1
+            bfs(i)
 
 
-def solution(bridge_length, weight, truck_weights):
-    qeue = deque()
-    answer = 0
-    count = 0
+bfs(1)
+print(count)
 
-    for i in truck_weights:
-
-        # 다리가 견딜 수 있는 무게
-        if (sum(qeue) + int(i)) > weight:
-            answer = answer + 1
-            count = 0
-            qeue.clear()
-            qeue.append(i)
-
-        # 다리에 올라갈 트럭 수
-        if count == bridge_length:
-            answer = answer + 1
-            count = 0
-            qeue.clear()
-
-        count = count + 1
-        answer = answer + 1
-        qeue.append(i)
-
-    return answer
-
+# 1인거를 찾자
+# 연계되는 거를 찾고
