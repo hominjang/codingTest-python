@@ -38,5 +38,7 @@ for i in range(x):
             count = 0
 
 print(len(houseCount))
+houseCount.sort()
+
 for i in houseCount:
     print(i)
